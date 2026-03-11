@@ -1,6 +1,11 @@
 # GridConnect
 
 A comprehensive geospatial intelligence platform for understanding electricity grid infrastructure and estimating the feasibility of new grid connections for renewable energy projects.
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/1363f358-06d7-4b26-b212-35eedb4427f5" />
+<img width="406" height="692" alt="image" src="https://github.com/user-attachments/assets/a91669b5-08eb-4deb-b451-509612f50829" />
+<img width="378" height="813" alt="image" src="https://github.com/user-attachments/assets/1c65f2bc-bdcb-4cf2-b097-b469ba5d23d2" />
+<img width="385" height="823" alt="image" src="https://github.com/user-attachments/assets/3249cf5c-38e0-449b-a345-e0a09bbaf948" />
+<img width="400" height="938" alt="image" src="https://github.com/user-attachments/assets/9bf1b04f-11e3-4009-ba63-25d7eeb15558" />
 
 ## Features
 
