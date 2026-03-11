@@ -1,0 +1,125 @@
+/* Expandable Card */
+.gc-card {
+  background-color: var(--gc-bg-secondary);
+  border: 1px solid var(--gc-border);
+  border-radius: var(--gc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--gc-shadow-md);
+  transition: var(--gc-transition);
+}
+
+.gc-card:hover {
+  border-color: var(--gc-primary);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+}
+
+.gc-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gc-spacing-lg);
+  background-color: var(--gc-bg-tertiary);
+  cursor: pointer;
+  transition: var(--gc-transition);
+  border-bottom: 1px solid transparent;
+  user-select: none;
+}
+
+.gc-card-header:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.gc-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--gc-spacing-md);
+  flex: 1;
+}
+
+.gc-card-title h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gc-text-primary);
+  margin: 0;
+}
+
+.gc-card-icon {
+  display: flex;
+  align-items: center;
+  color: var(--gc-primary);
+  flex-shrink: 0;
+}
+
+.gc-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--gc-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: var(--gc-spacing-sm);
+}
+
+.gc-badge-green {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: var(--gc-success);
+  border: 1px solid var(--gc-success);
+}
+
+.gc-badge-yellow {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: var(--gc-warning);
+  border: 1px solid var(--gc-warning);
+}
+
+.gc-badge-red {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--gc-danger);
+  border: 1px solid var(--gc-danger);
+}
+
+.gc-badge-blue {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: var(--gc-primary);
+  border: 1px solid var(--gc-primary);
+}
+
+.gc-chevron {
+  color: var(--gc-text-secondary);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.gc-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.gc-card-content {
+  padding: var(--gc-spacing-lg);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simple Card */
+.gc-simple-card {
+  background-color: var(--gc-bg-tertiary);
+  border: 1px solid var(--gc-border);
+  border-radius: var(--gc-radius-md);
+  padding: var(--gc-spacing-lg);
+  transition: var(--gc-transition);
+}
+
+.gc-simple-card:hover {
+  border-color: var(--gc-primary);
+}

@@ -1,0 +1,128 @@
+# ===============================
+# ENVIRONMENT VARIABLES
+# ===============================
+
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+
+# keep template
+!.env.example
+
+# ===============================
+# PYTHON
+# ===============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual environments
+venv/
+.venv/
+ven/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ===============================
+# FASTAPI / BACKEND LOGS
+# ===============================
+
+*.log
+logs/
+
+# ===============================
+# DATABASE / LOCAL DATA
+# ===============================
+
+data/
+*.sqlite
+*.db
+
+# ===============================
+# NODE / REACT
+# ===============================
+
+node_modules/
+frontend/node_modules/
+
+frontend/build/
+frontend/dist/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===============================
+# DOCKER
+# ===============================
+
+docker-data/
+*.tar
+*.tar.gz
+
+# ===============================
+# IDE / EDITORS
+# ===============================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# ===============================
+# OS FILES
+# ===============================
+
+.DS_Store
+Thumbs.db
+
+# ===============================
+# TEMP FILES
+# ===============================
+
+*.tmp
+*.temp
+*.cache
+
+# ===============================
+# JUPYTER / DATA SCIENCE
+# ===============================
+
+.ipynb_checkpoints/
+
+# ===============================
+# GIS / GEOSPATIAL (optional)
+# ===============================
+
+*.shp
+*.dbf
+*.shx
+*.prj
+*.geojson
+*.gpkg
+
+# ===============================
+# PROJECT-SPECIFIC
+# ===============================
+
+# Local data imports
+/app/data/
+/data/
+
+# Local build artifacts
+/app/__pycache__/

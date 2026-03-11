@@ -1,0 +1,112 @@
+/* Color Palette */
+:root {
+  /* Primary Colors */
+  --gc-primary: #3b82f6;
+  --gc-primary-dark: #1e40af;
+  --gc-primary-light: #dbeafe;
+
+  /* Status Colors */
+  --gc-success: #22c55e;
+  --gc-warning: #f59e0b;
+  --gc-danger: #ef4444;
+
+  /* Neutral Colors */
+  --gc-bg-primary: #0f172a;
+  --gc-bg-secondary: #1e293b;
+  --gc-bg-tertiary: #334155;
+  --gc-border: #475569;
+  --gc-text-primary: #f1f5f9;
+  --gc-text-secondary: #cbd5e1;
+  --gc-text-tertiary: #94a3b8;
+
+  /* Spacing */
+  --gc-spacing-xs: 4px;
+  --gc-spacing-sm: 8px;
+  --gc-spacing-md: 12px;
+  --gc-spacing-lg: 16px;
+  --gc-spacing-xl: 24px;
+  --gc-spacing-2xl: 32px;
+
+  /* Border Radius */
+  --gc-radius-sm: 4px;
+  --gc-radius-md: 8px;
+  --gc-radius-lg: 12px;
+
+  /* Shadows */
+  --gc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --gc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --gc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --gc-transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background-color: var(--gc-bg-primary);
+  color: var(--gc-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--gc-bg-primary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gc-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gc-bg-tertiary);
+  border-radius: var(--gc-radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gc-border);
+}
+
+/* Utility Classes */
+.gc-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--gc-bg-tertiary);
+  border-top-color: var(--gc-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: var(--gc-spacing-sm);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.gc-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gc-spacing-2xl);
+  gap: var(--gc-spacing-lg);
+  color: var(--gc-text-secondary);
+}
