@@ -2,22 +2,33 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies for GIS and Osmium
 RUN apt-get update && apt-get install -y \
-  postgresql-client \
-  gdal-bin \
-  libgdal-dev \
-  libgeos-dev \
-  libproj-dev \
-  gcc \
-  && rm -rf /var/lib/apt/lists/*
+    postgresql-client \
+    gdal-bin \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev \
+    libosmium2-dev \
+    libboost-dev \
+    libz-dev \
+    libbz2-dev \
+    libexpat1-dev \
+    gcc \
+    g++ \
+    make \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set GDAL environment variables
 ENV GDAL_CONFIG=/usr/bin/gdal-config
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
 
-# Copy and install Python dependencies
+# Ensure pip, setuptools, and wheel are up to date
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# COPY and install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -28,4 +39,4 @@ COPY . .
 RUN chmod +x /app/docker-entrypoint.sh || true
 
 # Run the app
-CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "${PORT:-8000}"]
+CMD ["/app/docker-entrypoint.sh"]
