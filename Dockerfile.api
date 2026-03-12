@@ -2,17 +2,17 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies for PostGIS and spatial libraries
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    postgresql-client \
-    gdal-bin \
-    libgdal-dev \
-    libgeos-dev \
-    libproj-dev \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+  postgresql-client \
+  gdal-bin \
+  libgdal-dev \
+  libgeos-dev \
+  libproj-dev \
+  gcc \
+  && rm -rf /var/lib/apt/lists/*
 
-# Set environment variables for GDAL
+# Set GDAL environment variables
 ENV GDAL_CONFIG=/usr/bin/gdal-config
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
@@ -21,6 +21,11 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy application code
 COPY . .
 
+# Create startup script that checks if DB needs initialization
+RUN chmod +x /app/docker-entrypoint.sh || true
+
+# Run the app
 CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
