@@ -3,6 +3,7 @@
 Geospatial Intelligence Platform for UK Grid Connections
 
 A comprehensive open-source platform to help renewable energy projects understand grid connection feasibility, queue positions, and connection timelines.
+
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/1363f358-06d7-4b26-b212-35eedb4427f5" />
 ## 🌟 Features
 
