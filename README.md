@@ -103,11 +103,6 @@ gridconnect/
 
 ## 🤝 Current Partnerships
 
-- 🏫 University of Cambridge - Academic supervision
-- 🌐 [OpenSite.energy](https://opensite.energy) - Platform integration
-- 🔌 UK Power Networks - Data partnership (in development)
-- 🌱 Community Energy England - Collaboration
-
 ## 📝 License
 
 MIT License - See [LICENSE](./LICENSE)
