@@ -50,6 +50,10 @@ const App: React.FC = () => {
     }
   };
 
+  const handleLocationSelect = (lat: number, lng: number) => {
+    setState(prev => ({ ...prev, mapCenter: [lat, lng] }));
+  };
+
   return (
     <div className="app">
       <Header />
@@ -59,6 +63,7 @@ const App: React.FC = () => {
             center={state.mapCenter}
             selectedProject={state.selectedProject}
             analysisData={state.analysisData}
+            onLocationSelect={handleLocationSelect}
           />
         }
         sidebarComponent={
@@ -66,6 +71,8 @@ const App: React.FC = () => {
             <ConnectionForm
               onAnalyze={handleAnalyze}
               loading={state.loading}
+              locationState={{ lat: state.mapCenter[0], lng: state.mapCenter[1] }}
+              onLocationChange={handleLocationSelect}
             />
             {state.analysisData && (
               <AnalysisPanel
